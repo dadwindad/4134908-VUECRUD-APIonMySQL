@@ -13,7 +13,9 @@
       <tbody>
         <tr v-for="(user, index) in users" v-bind:key="index">
           <td>{{user.id}}</td>
-          <td>{{user.name}}</td>
+          <td>
+            <router-link :to="`/api/${user.id}`">{{user.name}}</router-link>
+          </td>
           <td>{{user.email}}</td>
           <td>
             <b-link @click="edit(user.id)">
